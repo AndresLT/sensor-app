@@ -8,13 +8,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: '',
+    loadChildren: () => import('./feature/feature.module').then(i => i.FeatureModule),
+  },
+  {
     path: '**',
     redirectTo: '/login',
     pathMatch: 'full'
-  },
-  {
-    path: '',
-    loadChildren: () => import('./feature/feature.module').then(i => i.FeatureModule),
   }
 ];
 
